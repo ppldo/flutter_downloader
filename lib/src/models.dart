@@ -10,7 +10,7 @@ class DownloadTaskStatus {
 
   get hashCode => _value;
 
-  operator ==(status) => status._value == this._value;
+  operator ==(status) => status is DownloadTaskStatus && status._value == this._value;
 
   toString() => 'DownloadTaskStatus($_value)';
 
@@ -47,13 +47,13 @@ class DownloadTask {
   final int timeCreated;
 
   DownloadTask(
-      {this.taskId,
-      this.status,
-      this.progress,
-      this.url,
-      this.filename,
-      this.savedDir,
-      this.timeCreated});
+      {required this.taskId,
+      required this.status,
+      required this.progress,
+      required this.url,
+      required this.filename,
+      required this.savedDir,
+      required this.timeCreated});
 
   @override
   String toString() =>
